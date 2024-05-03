@@ -3,15 +3,29 @@ const { data } = await useFetch<{ id: number }>('https://jsonplaceholder.typicod
 
 const posts = ref(data.value.slice(0, 5).map(p => p.id))
 
+const history = ref<{ action: string, state: number[] }[]>([])
+
 function swap(from: number, to: number) {
-    const temp = posts.value[from]
+    const id = posts.value[from]
+
+    history.value.push({
+        action: `Moved post ${id} from index ${from} to index ${to}`,
+        state: [...posts.value],
+    })
+
     posts.value[from] = posts.value[to]
-    posts.value[to] = temp
+    posts.value[to] = id
+}
+
+function timeTravel(index: number) {
+    posts.value = history.value[index].state
+
+    history.value = history.value.slice(0, index)
 }
 </script>
 
 <template>
-    <div class="max-w-2xl p-8">
+    <div class="max-w-4xl p-8">
         <div class="grid grid-cols-2 gap-16">
             <div>
                 <h1>Sortable Post List</h1>
@@ -43,6 +57,20 @@ function swap(from: number, to: number) {
 
             <div>
                 List of actions committed
+
+                <ul class="mt-4 flex flex-col-reverse gap-4">
+                    <li
+                        v-for="(item, i) in history"
+                        :key="i"
+                        class="flex items-center justify-between bg-white p-2 text-black"
+                    >
+                        {{ item.action }}
+
+                        <button class="btn" @click="timeTravel(i)">
+                            Time travel
+                        </button>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
