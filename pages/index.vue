@@ -32,7 +32,10 @@ function timeTravel(index: number) {
                     Sortable Post List
                 </h1>
 
-                <ul class="mt-4 flex flex-col gap-4">
+                <ul
+                    v-auto-animate
+                    class="mt-4 flex flex-col gap-4"
+                >
                     <li
                         v-for="(post, i) in posts"
                         :key="post"
@@ -63,7 +66,10 @@ function timeTravel(index: number) {
                 </div>
 
                 <div class="p-4">
-                    <ul class="flex flex-col-reverse overflow-hidden rounded-lg shadow-lg">
+                    <ul
+                        v-auto-animate
+                        class="flex flex-col-reverse overflow-hidden rounded-lg shadow-lg"
+                    >
                         <li
                             v-for="(item, i) in history"
                             :key="i"

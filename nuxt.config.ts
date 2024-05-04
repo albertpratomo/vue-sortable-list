@@ -3,6 +3,7 @@ import { appDescription } from './constants/index'
 
 export default defineNuxtConfig({
     modules: [
+        '@formkit/auto-animate/nuxt',
         '@vueuse/nuxt',
         '@unocss/nuxt',
         '@pinia/nuxt',
