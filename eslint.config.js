@@ -10,6 +10,7 @@ export default nuxt(
             stylistic: {
                 indent: 4, // 4, or 'tab'
             },
+            yaml: false,
         },
     ),
 )

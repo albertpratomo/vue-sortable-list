@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const { data } = await useFetch<{ id: number }>('https://jsonplaceholder.typicode.com/posts')
+const { data } = await useFetch<{ id: number }[]>('https://jsonplaceholder.typicode.com/posts')
 
-const posts = ref(data.value.slice(0, 5).map(p => p.id))
+const posts = ref(data.value!.slice(0, 5).map(p => p.id))
 
 const history = ref<{ action: string, state: number[] }[]>([])
 
