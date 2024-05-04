@@ -8,12 +8,9 @@ devDependencies:
   '@antfu/eslint-config':
     specifier: ^2.15.0
     version: 2.16.1(@vue/compiler-sfc@3.4.26)(eslint-plugin-format@0.1.1)(eslint@9.2.0)(typescript@5.4.5)
-  '@iconify-json/carbon':
-    specifier: ^1.1.31
-    version: 1.1.32
-  '@iconify-json/twemoji':
-    specifier: ^1.1.15
-    version: 1.1.15
+  '@iconify-json/heroicons':
+    specifier: ^1.1.21
+    version: 1.1.21
   '@nuxt/eslint':
     specifier: ^0.3.9
     version: 0.3.10(eslint@9.2.0)(nuxt@3.11.2)(rollup@2.79.1)(typescript@5.4.5)(vite@5.2.11)
@@ -1828,14 +1825,8 @@ packages:
     engines: {node: '>=18.18'}
     dev: true
 
-  /@iconify-json/carbon@1.1.32:
-    resolution: {integrity: sha512-9X8wVI7AmcnjTyOdDoCgyNwcFL9lb++nacDS2yLANTc27F4y9Q8pJIfUVsakR4KcGqSSBCyXwEmBDeopeTZFqA==}
-    dependencies:
-      '@iconify/types': 2.0.0
-    dev: true
-
-  /@iconify-json/twemoji@1.1.15:
-    resolution: {integrity: sha512-ze2CAOwIWBKIP6ih6qMDItasVjRicktl2Qr3/ohZSMToAHm9z3Q6HCwE48eT0+D+uFpGBlNRQ22HHyE5izyhDg==}
+  /@iconify-json/heroicons@1.1.21:
+    resolution: {integrity: sha512-A+3L4KN+TjH3V8fQ2N2dkOOnLLxMgMBzO8RDT0P9YL+YzvLMIbe/lkDLSB8NB8x0DKWmkvTimoo1l4DKMwi7Zg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
