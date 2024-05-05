@@ -3,14 +3,12 @@ import { appDescription } from './constants/index'
 
 export default defineNuxtConfig({
     modules: [
-        '@formkit/auto-animate/nuxt',
         '@vueuse/nuxt',
         '@unocss/nuxt',
         '@pinia/nuxt',
         '@nuxtjs/color-mode',
         '@vite-pwa/nuxt',
         '@nuxt/eslint',
-        '@nuxt/test-utils/module',
     ],
 
     experimental: {

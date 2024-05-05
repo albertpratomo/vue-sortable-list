@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { vAutoAnimate } from '@formkit/auto-animate'
+
 const { data } = await useFetch<{ id: number }[]>('https://jsonplaceholder.typicode.com/posts')
 
 const posts = ref(data.value!.slice(0, 5).map(p => p.id))
@@ -84,6 +86,7 @@ function timeTravel(index: number) {
 
                                 <button
                                     class="rounded bg-[#28ff90] px-4 py-2 font-semibold hover:bg-[#00ec72]"
+                                    :aria-label="`Time travel ${i} button`"
                                     @click="timeTravel(i)"
                                 >
                                     Time travel
