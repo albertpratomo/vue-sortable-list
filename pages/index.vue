@@ -49,12 +49,14 @@ function timeTravel(index: number) {
                                 <button
                                     v-if="i > 0"
                                     class="i-heroicons-chevron-up-16-solid hover:text-indigo-950"
+                                    :aria-label="`Post ${post} swap up button`"
                                     @click="swap(i, i - 1)"
                                 />
 
                                 <button
                                     v-if="i < posts.length - 1"
                                     class="i-heroicons-chevron-down-16-solid hover:text-indigo-950"
+                                    :aria-label="`Post ${post} swap down button`"
                                     @click="swap(i, i + 1)"
                                 />
                             </div>
