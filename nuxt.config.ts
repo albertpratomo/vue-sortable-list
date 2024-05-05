@@ -10,6 +10,7 @@ export default defineNuxtConfig({
         '@nuxtjs/color-mode',
         '@vite-pwa/nuxt',
         '@nuxt/eslint',
+        '@nuxt/test-utils/module',
     ],
 
     experimental: {
