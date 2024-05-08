@@ -28,7 +28,7 @@ function timeTravel(index: number) {
 
 <template>
     <Suspense>
-        <div class="p-8">
+        <div class="px-8 py-16">
             <div class="grid gap-x-16 gap-y-10 sm:grid-cols-2">
                 <div>
                     <h1 class="text-lg text-white font-medium">
@@ -66,7 +66,7 @@ function timeTravel(index: number) {
                     </ul>
                 </div>
 
-                <div class="overflow-hidden rounded shadow-lg">
+                <div class="overflow-hidden rounded bg-zinc-200 shadow-lg">
                     <div class="bg-zinc-100 p-4 text-zinc-600 font-semibold">
                         List of actions committed
                     </div>
