@@ -3,7 +3,7 @@ import { vAutoAnimate } from '@formkit/auto-animate'
 
 const store = usePostsStore()
 
-const { posts } = storeToRefs(store)
+const { posts, errorText } = storeToRefs(store)
 
 const { fetchPosts, swap } = store
 
@@ -16,6 +16,13 @@ await useAsyncData('posts', () => fetchPosts())
             <h1 class="text-lg text-white font-medium">
                 Sortable Post List
             </h1>
+
+            <div
+                v-if="errorText"
+                class="mt-4 rounded bg-red-200 p-4 text-red shadow-lg"
+            >
+                {{ errorText }}
+            </div>
 
             <ul
                 v-auto-animate

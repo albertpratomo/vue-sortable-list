@@ -3,10 +3,15 @@ export const usePostsStore = defineStore('posts', () => {
 
     const history = ref<{ action: string, state: number[] }[]>([])
 
-    async function fetchPosts() {
-        const { data } = await useFetch<{ id: number }[]>('https://jsonplaceholder.typicode.com/posts')
+    const errorText = ref<string>('')
 
-        posts.value = data.value!.slice(0, 5).map(p => p.id)
+    async function fetchPosts() {
+        const { data, error } = await useFetch<{ id: number }[]>('https://jsonplaceholder.typicode.com/posts')
+
+        if (error.value)
+            errorText.value = 'There is an error when fetching the posts.'
+        else
+            posts.value = data.value!.slice(0, 5).map(p => p.id)
 
         return posts.value
     }
@@ -32,6 +37,7 @@ export const usePostsStore = defineStore('posts', () => {
     return {
         posts,
         history,
+        errorText,
         fetchPosts,
         swap,
         timeTravel,
