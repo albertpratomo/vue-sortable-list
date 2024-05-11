@@ -1,7 +1,6 @@
-import { describe, expect, it, vi } from 'vitest'
+import { afterEach, describe, expect, it } from 'vitest'
 import { registerEndpoint, renderSuspended } from '@nuxt/test-utils/runtime'
 import { fireEvent, screen } from '@testing-library/vue'
-import { createTestingPinia } from '@pinia/testing'
 import index from './index.vue'
 
 async function render() {
@@ -11,14 +10,7 @@ async function render() {
 
     registerEndpoint('https://jsonplaceholder.typicode.com/posts', () => posts)
 
-    return await renderSuspended(index, {
-        global: {
-            plugins: [createTestingPinia({
-                createSpy: vi.fn,
-                stubActions: false,
-            })],
-        },
-    })
+    return await renderSuspended(index)
 }
 
 function expectOrder(order: string) {
@@ -30,6 +22,10 @@ function expectOrder(order: string) {
 }
 
 describe('index', () => {
+    afterEach(() => {
+        usePostsStore().$reset()
+    })
+
     it('fetches and renders first 5 posts', async () => {
         const { getByRole } = await render()
 

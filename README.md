@@ -4,7 +4,7 @@
 
 This is a simple app to demonstrate my Vue 3 + TS skills. In the app you can swap the item order, see committed actions, and time travel to previous state. You can play with it [here](https://vue-sortable-list.vercel.app/).
 
-The tech stack used: Vue 3, Nuxt 3, TS, Tailwind (UnoCSS), Vitest, Testing Library. On each push to `main`, the CI pipeline will run to lint, typecheck, and test the code.
+The tech stack used: Vue 3, Nuxt 3, TS, Tailwind (UnoCSS), Pinia, Vitest, Testing Library. On each push to `main`, the CI pipeline will run to lint, typecheck, and test the code.
 
 ## Getting started
 

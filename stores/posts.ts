@@ -34,6 +34,11 @@ export const usePostsStore = defineStore('posts', () => {
         history.value = history.value.slice(0, index)
     }
 
+    function $reset() {
+        posts.value = []
+        history.value = []
+    }
+
     return {
         posts,
         history,
@@ -41,6 +46,7 @@ export const usePostsStore = defineStore('posts', () => {
         fetchPosts,
         swap,
         timeTravel,
+        $reset,
     }
 })
 
