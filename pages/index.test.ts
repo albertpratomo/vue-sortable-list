@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it } from 'vitest'
 import { registerEndpoint, renderSuspended } from '@nuxt/test-utils/runtime'
 import { fireEvent, screen } from '@testing-library/vue'
 import index from './index.vue'
@@ -22,6 +22,10 @@ function expectOrder(order: string) {
 }
 
 describe('index', () => {
+    afterEach(() => {
+        usePostsStore().$reset()
+    })
+
     it('fetches and renders first 5 posts', async () => {
         const { getByRole } = await render()
 
