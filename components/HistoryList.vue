@@ -25,7 +25,7 @@ const { timeTravel } = store
                     :class="{ 'border-b border-zinc-300': i > 0 }"
                     class="flex items-center justify-between bg-zinc-100 p-2 text-sm text-zinc-600 shadow-lg"
                 >
-                    {{ item.action }}
+                    {{ item.description }}
 
                     <button
                         class="rounded bg-[#28ff90] px-4 py-2 font-semibold hover:bg-[#00ec72]"
